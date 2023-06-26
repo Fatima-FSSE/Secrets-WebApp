@@ -1,8 +1,8 @@
 {
   "name": "secrets-webapp",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "description": "Webapp to login with email, google and facebook to submit your secrets.",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
