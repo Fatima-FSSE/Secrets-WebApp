@@ -75,7 +75,7 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "https://influential-hub-391023.uc.r.appspot.com/auth/google/secrets",
+      callbackURL: "https://c3drnl-3000.csb.app/auth/google/secrets",
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
@@ -94,7 +94,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL:"https://influential-hub-391023.uc.r.appspot.com/auth/facebook/secrets"
+      callbackURL:"https://c3drnl-3000.csb.app/auth/facebook/secrets"
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate({ 
