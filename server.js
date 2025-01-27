@@ -96,7 +96,7 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL:"https://c3drnl-3000.csb.app/auth/facebook/secrets"
+      callbackURL:"https://secrets-web-app-sable.vercel.app/auth/facebook/secrets"
     },
     function (accessToken, refreshToken, profile, cb) {
       User.findOrCreate({ 
