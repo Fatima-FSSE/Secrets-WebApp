@@ -81,14 +81,17 @@ passport.use(
       userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo",
     },
     function (accessToken, refreshToken, profile, cb) {
-      User.findOrCreate({ 
-        email: profile.displayName,
-        googleId: profile.id }, function (err, user) {
-        return cb(err, user);
-      });
+      User.findOrCreate(
+        { googleId: profile.id },
+        { username: profile.emails?.[0]?.value, email: profile.emails?.[0]?.value }, // Ensure username is set
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
     }
   )
 );
+
 
 //Facebook Strategy
 passport.use(
@@ -120,7 +123,7 @@ app.get("/", async (req, res) => {
 app.get(
   "/auth/google",
   passport.authenticate("google", {
-    scope: ["profile"],
+    scope: ["email","profile"],
   })
 );
 
